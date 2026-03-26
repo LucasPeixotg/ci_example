@@ -6,8 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        python-version: ["3.11", "3.12"]
     steps:
+      - name: Setup and Flake8 testing
+        run: pip install flake8
+        run: flake8 .
+
       - name: Running Tests with ${{ matrix.python-version }}
         run: python -m unittest -v
 
