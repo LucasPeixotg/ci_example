@@ -9,7 +9,6 @@ jobs:
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     steps:
       - name: Running Tests with ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
         run: python -m unittest -v
 
       - name: List files in the repository
